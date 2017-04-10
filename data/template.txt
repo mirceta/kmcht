@@ -1,0 +1,45 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[landscape, top=10pt, bottom=10pt, left=10pt, right=10pt]{geometry}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0.6pt}
+
+% LaTeX page formats
+% \documentclass[a4paper]{article} - normal mode
+% \usepackage[landscape]{geometry} - landscape mode
+% \usepackage[top=length, bottom=length, left=length, right=length]
+% {geometry} - give exact values for the white space at margins of the paper
+
+% Multicolumn pages
+% \usepackage{multicol}
+% \begin{multicols}{3}
+
+% \vfill
+% \columnbreak
+% above two lines to go into new column
+
+% \begin{verbatim}
+%	text in here will be exactly as its written including spaces!
+% \end{verbatim}
+
+\begin{multicols*}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Begin cheatsheet
+\textbf{replace} \newline
+%%%%%%[BEGINCHEATSHEET]
+
+
+
+\end{multicols*}
+\end{document}

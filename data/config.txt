@@ -1,0 +1,1 @@
+{"homedir": "/Users/km/PycharmProjects/kmcht", "directory": "/Users/km/PycharmProjects/kmcht/cheatsheets"}

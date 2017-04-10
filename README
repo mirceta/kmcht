@@ -1,0 +1,15 @@
+[Dependencies]
+- pdflatex in your path environment variable (mactex)
+- python 3.4 in your path environment variable
+
+Kmcht is a program that manages a folder of cheatsheets, generated from
+cheatsheet files.
+
+A cheatsheet file:
+[python;strings;default]
+~~~~~
+Description
+~~~~~
+~~~~~
+Code
+~~~~~

@@ -1,0 +1,28 @@
+[python;strings;default]
+~~~~~
+neki neki neki
+~~~~~
+~~~~~
+neki neki neki
+~~~~~
+[python;arrays;default]
+~~~~~
+neki neki neki
+~~~~~
+~~~~~
+neki neki neki
+~~~~~
+[c;arrays;default]
+~~~~~
+kurac
+~~~~~
+~~~~~
+djudji
+~~~~~
+[c;kurac;default]
+~~~~~
+kurac
+~~~~~
+~~~~~
+djudji
+~~~~~

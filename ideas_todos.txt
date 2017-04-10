@@ -1,0 +1,66 @@
+##<IDEA> use another metric for finding closest matches in recommendations.
+For example, by edit distance Numpy and NumpyTutorial are very far away.
+Find a metric that connects them very close!
+
+## !!!!! <AWESOME IDEA> !!!!!
+Instead of having a cheatsheet file. How about doing this directly from programs?
+When you have a .cpp file, you put a sign for kmcht in a comment and label the part 
+of code you want to put into a cheatsheet.
+e.g.:
+
+// start(KMCHT) [cpp;certificates;default]
+void create_certificates(X509Certificate 2 cert) {
+	.. some code
+}
+// end(KMCHT)
+
+
+##<IDEA> make colorful outputs in the message box!
+
+##<IDEA>
+Warn the user if the current knowledge piece is very similar to an existing
+knowledge piece
+
+##<IDEA>
+Add a visulization of the cheatsheet taxonomy for easier navigation!
+
+##<TODO>
+Test this thing out on realworld cases
+
+##<SOLVED>
+The tool now uses a GUI to do all the processing for it. it's much more comfortable!
+
+##<SOLVED>
+Create the ability to parse a file filled with knowledge and integrate it into the cheatsheet.
+Format:
+
+[DESCRIPTION]
+....description
+[CODE]
+....code
+
+### Where I left of:
+
+##<SOLVED>
+Problem: The data about the tool is stored in some other directory than the current directory.
+How do I make the program shift to the directory in which it is residing?
+
+# by the following way
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
+# make sure to switch back to the previous path after exiting the program though!!!!
+
+##<TODO>
+Problem: There seem to be added newlines at the beginning of each category for no reason.
+         Look into it and solve it once and for all.
+
+##<TODO> <SOLVED>
+Problem: Get rid of the problem of duplicate knowledge. If a knowledge block is already
+         in the cheatsheet then we don't add it to the cheatsheet!
+
+##<TODO> <SOLVED>
+Problem: As it is now, you have to give an absolute path of a .cht file for the tool to work.
+         Fix the tool to use relative paths.
