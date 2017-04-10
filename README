@@ -13,3 +13,48 @@ Description
 ~~~~~
 Code
 ~~~~~
+
+###################################
+## Copyright Kristijan Mirceta 2016
+## KMCHT
+
+## Program used to store arbitrary knowledge in cheatsheets for
+## the user's better organization.
+
+##### Detailed explanation
+## This program receives an input argument of a .cht file.
+## Updates the cheatsheets that are refered to in the .cht file
+## with the provided data={description,code}. For each entry that
+## is not recognized as valid in the .cht file, the program will
+## prompt the user to tell it what to do.
+
+## The program is first configured before running -
+## simply by specifying the directory in which your cheatsheets
+## will be stored
+
+## INPUT .CHT FILE RULES
+## the .cht file is of the format
+## [<cheatsheet_name>;<category>;<subcategory>]
+## ~~~~~
+## <description>
+## ~~~~~
+## ~~~~~
+## <code>
+## ~~~~~
+## [<cheatsheet_name>;<category>;<subcategory>]
+## ~~~~~
+## <description>
+## ~~~~~
+## ~~~~~
+## <code>
+## ~~~~~
+## ...
+
+## CHEATSHEET RULES
+## 1. Before the first category, you need to have a commented
+## [BEGINCHEATSHEET] for the program to work!
+
+## 2. each category starts with
+## %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+## %% <catname>
+## \textbf{\underline{<catname>}}
