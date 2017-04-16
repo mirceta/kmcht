@@ -1,0 +1,28 @@
+##<IDEA> use another metric for finding closest matches in recommendations.
+For example, by edit distance Numpy and NumpyTutorial are very far away.
+Find a metric that connects them very close!
+
+## !!!!! <AWESOME IDEA> !!!!!
+Instead of having a cheatsheet file. How about doing this directly from programs?
+When you have a .cpp file, you put a sign for kmcht in a comment and label the part 
+of code you want to put into a cheatsheet.
+e.g.:
+
+// start(KMCHT) [cpp;certificates;default]
+void create_certificates(X509Certificate 2 cert) {
+	.. some code
+}
+// end(KMCHT)
+
+
+##<IDEA> make colorful outputs in the message box!
+
+##<IDEA>
+Warn the user if the current knowledge piece is very similar to an existing
+knowledge piece
+
+##<IDEA>
+Add a visulization of the cheatsheet taxonomy for easier navigation!
+
+##<TODO>
+Test this thing out on realworld cases

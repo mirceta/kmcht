@@ -1,0 +1,1 @@
+{"directory": "C:/Users/km/Dropbox/cheatsheets", "homedir": "/Users/km/PycharmProjects/kmcht"}

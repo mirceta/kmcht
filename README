@@ -1,0 +1,26 @@
+WORKING PROTOTYPE
+
+[What is it]
+Kmcht is a tool for transforming cheatsheet files to pdfs containing cheatsheets.
+
+A cheatsheet file:
+[python;strings;default]
+~~~~~
+Description
+~~~~~
+~~~~~
+Code
+~~~~~
+
+[How to use]
+With python 3.4 run gui.py. Set a destination folder of where cheatsheets - 1 .pdf and 1 .tex
+will reside. The .tex is needed to add knowledge to an existing cheatsheet. 
+
+If pdflatex is in your path then leave the text field blank, else enter the path to pdflatex. 
+Give a path to your knowledge file. (Sample in data/sample.txt)
+Run by clicking the button and the messages in the message box will lead you through the usage
+of the program.
+
+[Dependencies]
+- pdflatex in your path environment variable (mactex)
+- python 3.4 in your path environment variable

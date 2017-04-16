@@ -1,0 +1,22 @@
+### CATEGORY SAMPLE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Scikit-learn Tutorial
+\textbf{\underline{Scikit-learn Tutorial}} \newline
+\newline
+\tiny{}
+\begin{verbatim}
+##### Extracting features from text ###################
+from sklearn.feature_extraciton.text import TfidfVectorizer
+
+
+Transforms a list of strings into a bag-of-words sparse matrix.
+Functions with bag of words. character n-grams, word n-grams.
+http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+
+# instantiate a vectorizer with stopword extraction
+vectorizer = TfidfVectorizer(stop_words=stop_words.ENGLISH_STOP_WORDS)
+
+
+\end{verbatim}
+\normalsize{}
