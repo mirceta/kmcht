@@ -22,7 +22,13 @@ class CheatsheetEngine:
         self.input_file = inputfl
         self.knowledge_piece_array = [] # format [(lang,cat,subcat,desc,code),...]
         self.gui_setters = guis
-        self.pdflatexpath = pdflatexpath
+
+        if len(pdflatexpath) == 0:
+            pdflatexpath = 'pdflatex'
+            if sys.platform.startswith('win'):
+                pdflatexpath += ".exe"
+        else:
+            self.pdflatexpath = pdflatexpath
 
         def wrapdir(file):
             i = file.find('.tex')
