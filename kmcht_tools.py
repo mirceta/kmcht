@@ -24,9 +24,9 @@ class CheatsheetEngine:
         self.gui_setters = guis
 
         if len(pdflatexpath) == 0:
-            pdflatexpath = 'pdflatex'
+            self.pdflatexpath = 'pdflatex'
             if sys.platform.startswith('win'):
-                pdflatexpath += ".exe"
+                self.pdflatexpath += ".exe"
         else:
             self.pdflatexpath = pdflatexpath
 
@@ -90,7 +90,7 @@ class CheatsheetEngine:
         if not os.path.isdir('backups'):
             os.makedirs('backups')
 
-        dirname = 'bak' + datetime.datetime.now().strftime("%Y-%m-%d%H:%M:%S")
+        dirname = 'bak' + datetime.datetime.now().strftime("%Y-%m-%d%H-%M-%S")
         os.chdir('backups')
         os.makedirs(dirname)
         os.chdir('..')
