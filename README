@@ -1,9 +1,7 @@
-[Dependencies]
-- pdflatex in your path environment variable (mactex)
-- python 3.4 in your path environment variable
+WORKING PROTOTYPE
 
-Kmcht is a program that manages a folder of cheatsheets, generated from
-cheatsheet files.
+[What is it]
+Kmcht is a tool for transforming cheatsheet files to pdfs containing cheatsheets.
 
 A cheatsheet file:
 [python;strings;default]
@@ -14,47 +12,15 @@ Description
 Code
 ~~~~~
 
-###################################
-## Copyright Kristijan Mirceta 2016
-## KMCHT
+[How to use]
+With python 3.4 run gui.py. Set a destination folder of where cheatsheets - 1 .pdf and 1 .tex
+will reside. The .tex is needed to add knowledge to an existing cheatsheet. 
 
-## Program used to store arbitrary knowledge in cheatsheets for
-## the user's better organization.
+If pdflatex is in your path then leave the text field blank, else enter the path to pdflatex. 
+Give a path to your knowledge file. (Sample in data/sample.txt)
+Run by clicking the button and the messages in the message box will lead you through the usage
+of the program.
 
-##### Detailed explanation
-## This program receives an input argument of a .cht file.
-## Updates the cheatsheets that are refered to in the .cht file
-## with the provided data={description,code}. For each entry that
-## is not recognized as valid in the .cht file, the program will
-## prompt the user to tell it what to do.
-
-## The program is first configured before running -
-## simply by specifying the directory in which your cheatsheets
-## will be stored
-
-## INPUT .CHT FILE RULES
-## the .cht file is of the format
-## [<cheatsheet_name>;<category>;<subcategory>]
-## ~~~~~
-## <description>
-## ~~~~~
-## ~~~~~
-## <code>
-## ~~~~~
-## [<cheatsheet_name>;<category>;<subcategory>]
-## ~~~~~
-## <description>
-## ~~~~~
-## ~~~~~
-## <code>
-## ~~~~~
-## ...
-
-## CHEATSHEET RULES
-## 1. Before the first category, you need to have a commented
-## [BEGINCHEATSHEET] for the program to work!
-
-## 2. each category starts with
-## %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-## %% <catname>
-## \textbf{\underline{<catname>}}
+[Dependencies]
+- pdflatex in your path environment variable (mactex)
+- python 3.4 in your path environment variable

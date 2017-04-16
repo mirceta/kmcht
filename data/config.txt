@@ -1,1 +1,1 @@
-{"directory": "C:/Users/km/PycharmProjects/kmcht/cheatsheets", "homedir": "/Users/km/PycharmProjects/kmcht"}
+{"directory": "C:/Users/km/Dropbox/cheatsheets", "homedir": "/Users/km/PycharmProjects/kmcht"}
