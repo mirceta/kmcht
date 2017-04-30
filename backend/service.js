@@ -23,7 +23,5 @@ connection.on('connect', function(err) {
     console.log(err);
   } else {
     console.log('successful');
-    mig.createDatabase(connection);
-    mig.existsCheatsheet(connection);
   }
 });

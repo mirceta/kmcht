@@ -33,6 +33,7 @@ exports.createDatabase = function(conn) {
 	conn.execSql(request);
 }
 
+// exists ops
 exports.existsCheatsheet = function(conn) {
 	var sql = `
 		SELECT TOP 1 [PK_id]
@@ -42,9 +43,126 @@ exports.existsCheatsheet = function(conn) {
 		if (err) { console.log(err); }
 		else {
 			if (rowCount > 0) {
-				return true;
-			} return false;
+				console.log("Some exist, yes");
+			} else {
+				console.log("No man, sadly");
+			}
+			
 		}
 	});
 	conn.execSql(request);
+}
+
+// insert ops
+exports.insertCheatsheet = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		INSERT INTO [dbo].[Cheatsheet]
+							([PK_CheatsheetId]
+							,[Lang])
+				VALUES
+							(<PK_CheatsheetId, uniqueidentifier,>
+							,<Lang, varchar(50),>)
+		GO
+	`;
+}
+
+exports.insertKnowledgePiece = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		INSERT INTO [dbo].[KnowledgePiece]
+							([PK_id]
+							,[FK_CheatsheetId]
+							,[CodeDescription]
+							,[Code])
+				VALUES
+							(<PK_id, uniqueidentifier,>
+							,<FK_CheatsheetId, int,>
+							,<CodeDescription, varchar(1),>
+							,<Code, varchar(1),>)
+		GO
+	`;
+}
+
+// update ops
+exports.updateCheatsheet = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		UPDATE [dbo].[Cheatsheet]
+			SET [PK_CheatsheetId] = <PK_CheatsheetId, uniqueidentifier,>
+					,[Lang] = <Lang, varchar(50),>
+		WHERE <Search Conditions,,>
+		GO
+	`;
+}
+
+exports.updateKnowledgePiece = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		UPDATE [dbo].[KnowledgePiece]
+			SET [PK_id] = <PK_id, uniqueidentifier,>
+					,[FK_CheatsheetId] = <FK_CheatsheetId, int,>
+					,[CodeDescription] = <CodeDescription, varchar(1),>
+					,[Code] = <Code, varchar(1),>
+		WHERE <Search Conditions,,>
+		GO
+	`;
+}
+
+// delete ops
+exports.deleteCheatsheet = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		DELETE FROM [dbo].[Cheatsheet]
+					WHERE <Search Conditions,,>
+		GO
+		`;
+}
+
+exports.deleteKnowledgePiece = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		DELETE FROM [dbo].[KnowledgePiece]
+					WHERE <Search Conditions,,>
+		GO
+	`;
+}
+
+// select ops
+exports.selectCheatsheet = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		SELECT [PK_CheatsheetId]
+					,[Lang]
+			FROM [dbo].[Cheatsheet]
+		GO
+	`;
+}
+
+exports.selectKnowledgePiece = function(conn) {
+	var sql = `
+		USE [kmcht_test]
+		GO
+
+		SELECT [PK_id]
+					,[FK_CheatsheetId]
+					,[CodeDescription]
+					,[Code]
+			FROM [dbo].[KnowledgePiece]
+		GO
+	`;
 }
