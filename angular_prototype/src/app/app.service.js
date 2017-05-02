@@ -11,22 +11,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //Example: customer.service.ts
 var http_1 = require("@angular/http");
 require('rxjs/Rx');
-var rxjs_1 = require("rxjs");
+var Observable_1 = require("rxjs/Observable");
 var core_1 = require('@angular/core');
 var AppService = (function () {
     function AppService(http) {
         this.http = http;
     }
-    AppService.prototype.getCustomers = function () {
-        return this.http.get('api/customers')
-            .map(function (response) {
-            return response.json().data;
-        })
-            .catch(this.handleError());
+    AppService.prototype.getHeaders = function () {
+        var headers = new http_1.Headers();
+        headers.append('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
+        headers.append('Accept-Encoding', 'gzip, deflate, sdch, br');
+        headers.append('Accept-Language', 'en-US,en;q=0.8');
+        headers.append('Cache-Control', 'max-age=0');
+        headers.append('Connection', 'keep-alive');
+        headers.append('Host', 'localhost:8081');
+        headers.append('Upgrade-Insecure-Requests', '1');
+        headers.append('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko)' +
+            'Chrome/58.0.3029.81 Safari/537.36');
+        return headers;
     };
-    AppService.prototype.handleError = function (error) {
-        console.error(error);
-        return rxjs_1.Observable.throw(error.json().error || , Service, error);
+    AppService.prototype.getCheatsheets = function () {
+        return this.http.get('http://localhost:8081/getCheatsheets', this.getHeaders())
+            .map(function (res) {
+            console.log('Got a response');
+            return JSON.stringify(res.json());
+        })
+            .catch(function () { return Observable_1.Observable.throw('error'); });
+    };
+    AppService.prototype.getKnowledgePieces = function () {
+        return this.http.get('http://localhost:8081/getKnowledgePieces', this.getHeaders())
+            .map(function (res) {
+            console.log('Got a response');
+            return JSON.stringify(res.json());
+        })
+            .catch(function () { return Observable_1.Observable.throw('error'); });
     };
     AppService = __decorate([
         core_1.Injectable(), 

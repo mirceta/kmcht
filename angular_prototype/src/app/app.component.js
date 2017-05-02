@@ -9,16 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var app_service_1 = require('./app.service');
 var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+    function AppComponent(appService) {
+        this.appService = appService;
+        this.name = "Angular";
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.appService.getCheatsheets().subscribe(function (data) {
+            console.log(data);
+            _this.cheatsheets = data.split(',');
+        });
+        this.appService.getKnowledgePieces().subscribe(function (data) {
+            console.log(data);
+            _this.kps = data.split(',');
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <input type=\"text\" [(ngModel)]=\"name\"/>\n  ",
+            template: "\n    <input type=\"text\" [(ngModel)]=\"name\"/>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-6\">\n\n          <ul>\n            <li *ngFor=\"let cht of cheatsheets\">\n              {{cht}}\n            </li>\n          </ul>\n\n        </div>\n        <div class=\"col-sm-6 col-md-6\">\n\n          <ul>\n            <li *ngFor=\"let kp of kps\">\n              {{kp}}\n            </li>\n          </ul>\n\n        </div>\n      </div>\n    </div>\n  ",
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [app_service_1.AppService])
     ], AppComponent);
     return AppComponent;
 }());
