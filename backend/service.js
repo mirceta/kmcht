@@ -8,7 +8,7 @@ console.log('required tedious');
 var config = {
   userName: 'kmcht', // update me
   password: 'kurackurac123', // update me
-  server: 'kmonster.ddns.net',
+  server: 'localhost',
   options:
 	{
 	database: 'kmcht_test',
@@ -61,7 +61,7 @@ app.get('/insertCheatsheet', function (req, res) {
                                   }, 
                                   function() {
                                     mig.insertCheatsheet(connection, lang,
-                                      function(id) {
+                                      function(id) {					
                                         res.end('successful');
                                       }
                                     )
@@ -80,6 +80,7 @@ app.get('/getCheatsheets', function (req, res) {
     } else {
       console.log('successful');
       mig.selectCheatsheet(connection, '', function(data) {
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
         res.end(JSON.stringify(data));
       });
     }
@@ -95,6 +96,7 @@ app.get('/getKnowledgePieces', function (req, res) {
     } else {
       console.log('successful');
       mig.selectKnowledgePiece(connection, function(data) {
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
         res.end(JSON.stringify(data));
       });
     }
